@@ -124,11 +124,11 @@ bool CTFWearableDemoShield::CanCharge( CTFPlayer *pPlayer )
 //-----------------------------------------------------------------------------
 void CTFWearableDemoShield::DoCharge( CTFPlayer *pPlayer )
 {
-#ifdef GAME_DLL
 	float flChargeTime = 1.5f;
 	CALL_ATTRIB_HOOK_FLOAT_ON_OTHER( pPlayer, flChargeTime, mod_charge_time );
 	pPlayer->m_Shared.AddCond( TF_COND_SHIELD_CHARGE, flChargeTime );
 
+#ifdef GAME_DLL
 	m_bImpactedSomething = false;
 #endif
 }
